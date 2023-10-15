@@ -1,0 +1,31 @@
+<ion-header [translucent]="true" mode="ios" class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>
+      David's News
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense" mode="ios" class="ion-no-border">
+    <ion-toolbar>
+      <ion-title size="large">David's News</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <app-articles [articles]="articles" />
+
+  <ion-infinite-scroll 
+    threshold="25%" 
+    position="bottom" 
+    (ionInfinite)="loadData()">
+
+    <ion-infinite-scroll-content 
+      loadingSpinner="bubbles" 
+      loadingText="Cargando...">
+
+    </ion-infinite-scroll-content>
+
+  </ion-infinite-scroll>
+
+</ion-content>
